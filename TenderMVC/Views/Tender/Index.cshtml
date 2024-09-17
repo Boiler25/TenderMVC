@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TenderMVC.Models.TenderViewModel>
+
+<h2>Tender List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tender in Model)
+        {
+            <tr>
+                <td>@tender.Name</td>
+                <td>@tender.StartDate.ToShortDateString()</td>
+                <td>@tender.EndDate.ToShortDateString()</td>
+                <td><a href="@tender.Url">@tender.Url</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
